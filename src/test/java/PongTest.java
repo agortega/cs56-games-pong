@@ -1,5 +1,3 @@
-package edu.ucsb.cs56.projects.games.pong;
-
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 

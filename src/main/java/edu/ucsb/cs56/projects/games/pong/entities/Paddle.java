@@ -1,22 +1,14 @@
-package edu.ucsb.cs56.projects.games.pong;
+package edu.ucsb.cs56.projects.games.pong.entities;
 
-import javax.swing.*;
-import java.awt.BasicStroke;
-import java.awt.event.KeyAdapter;
+import edu.ucsb.cs56.projects.games.pong.GameObject;
+import edu.ucsb.cs56.projects.games.pong.Screen;
+import edu.ucsb.cs56.projects.games.pong.gameObject;
+
 import java.awt.event.KeyEvent;
-import java.awt.Color; // class for Colors
 import java.awt.Graphics;
-import java.awt.Rectangle;  // squares and rectangles      
-import java.awt.Shape; // general class for shapes 
-import java.awt.Stroke;
-import java.awt.geom.*; // 
-import java.awt.geom.AffineTransform; // translation, rotation, scale
-import java.awt.geom.Ellipse2D;  // ellipses and circles
-import java.awt.geom.GeneralPath; // combinations of lines and curves
-import java.awt.geom.Line2D;  // single lines
-import java.awt.geom.Rectangle2D; // for the bounding box  
 
-/** edu.ucsb.cs56.projects.games.pong.Paddle is the class that is used to move the user-controlled paddle around the screen
+
+/** edu.ucsb.cs56.projects.games.pong.entities.Paddle is the class that is used to move the user-controlled paddle around the screen
  @author Timothy Fok
  @author Sanchit Gupta, Bhanu Khanijau
  @author Jake Dumont, Heneli Kailahi
@@ -24,9 +16,7 @@ import java.awt.geom.Rectangle2D; // for the bounding box
  @author Vincent Gandolfo, Krishna Lingampalli
  @version CS56, Winter 2015, UCSB 
 */
-public class Paddle extends gameObject{
-    public int points;
-    public int ballCount;
+public class Paddle extends GameObject {
     public  boolean right;
     public static final Integer paddleHeight = 90; //fixes paddle height at 
 

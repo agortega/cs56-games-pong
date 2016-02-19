@@ -1,31 +1,30 @@
 package edu.ucsb.cs56.projects.games.pong;
 
+import edu.ucsb.cs56.projects.games.pong.entities.Paddle;
+
 import java.awt.*;
-import javax.swing.*;
-import java.awt.event.*;
 
 /** edu.ucsb.cs56.projects.games.pong.gameObject is used to change velocities of objects used in the game pong
  @author Vincent Gandolfo, Krishna Lingampalli
  @version CS56, Winter 2015, UCSB
 */
-class gameObject{
+public class GameObject{
     
     public int xVelocity;                  // speed horizontally
     public int yVelocity;                  // speed vertically
-    static boolean isGoingRight = false;   // direction of the ball
     public Rectangle rectangle;            // holds the x and y coordinates
                                            //   as well as width and height
     /** Default constructor, not used */
-    gameObject() {  }            
+    GameObject() {  }
 
     /** Constructor used by both the Paddles, so all paddles are the same size */
-    gameObject( int x, int y ) 
+    public GameObject(int x, int y)
     {    
 	this( x, y, 10, Paddle.paddleHeight ); // paddleHeight is static
     }
     
     /** This constructor is used to set coordinates and size, used by subclasses Ball and Paddle */
-    gameObject( int x, int y, int rectW, int rectH )
+    GameObject( int x, int y, int rectW, int rectH )
     {
 	setXVelocity( 0 );
 	setYVelocity( 0 );

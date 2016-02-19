@@ -1,31 +1,7 @@
 package edu.ucsb.cs56.projects.games.pong;
 
-import javax.swing.*;
-
-import java.awt.*;
-
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.KeyAdapter;
-import java.awt.event.KeyEvent;
-import java.awt.Color; // class for Colors
-import java.awt.Dimension;
-import java.awt.Font;
-import java.awt.Graphics;
-import java.awt.Rectangle;  // squares and rectangles
-import java.awt.Shape; // general class for shapes
-import java.awt.Stroke;
-import java.awt.geom.AffineTransform; // translation, rotation, scale
-import java.awt.geom.Ellipse2D;  // ellipses and circles
-import java.awt.geom.GeneralPath; // combinations of lines and curves
-import java.awt.geom.Line2D;  // single lines
-import java.awt.geom.Rectangle2D; // for the bounding box
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.PrintWriter;
-import java.util.ArrayList;
+import edu.ucsb.cs56.projects.games.pong.entities.Ball;
+import edu.ucsb.cs56.projects.games.pong.entities.Paddle;
 
 /** edu.ucsb.cs56.projects.games.pong.Pong is the class that will facilitate
  * the game of Pong being run 
