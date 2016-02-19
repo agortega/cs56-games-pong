@@ -1,8 +1,8 @@
 package edu.ucsb.cs56.projects.games.pong;
 
 import javax.swing.*;
-import java.awt.*;
-import java.awt.event.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 /** edu.ucsb.cs56.projects.games.pong.MainMenu is the class for Main Menu selection. It brings up the main menu and has buttons that allow the user to play the game, read the instructions, or view the high scores
  @author Vincent Gandolfo, Krishna Lingampalli
@@ -13,12 +13,6 @@ public class MainMenu {
     private int newWindowWidth;
     private int newWindowHeight;
 
-    public JRadioButton easy;
-    public JRadioButton medium;
-    public JRadioButton hard;
-    public JRadioButton ExtremeType1; 
-    public JRadioButton supereasy;
-    public static JRadioButton ExtremeType2;
 
 
 
@@ -28,70 +22,78 @@ public class MainMenu {
      */
        
     public MainMenu() {
-	
+
        	JFrame frame = new JFrame( "Main Menu" );
-	JPanel panel = new JPanel();
-	JButton instructions = new JButton( "Instructions" );
-	JButton play = new JButton( "Play" );
-	JButton highScores = new JButton( "High Scores" );
 
-	frame.setDefaultCloseOperation( JFrame.EXIT_ON_CLOSE );
-	frame.add( panel );
-	
-	panel.setLayout( new BoxLayout( panel, BoxLayout.Y_AXIS ) );
+        // Panel controls what is in our UI
+        JPanel panel = new JPanel();
 
-	instructions.setAlignmentX( JFrame.CENTER_ALIGNMENT );
-	highScores.setAlignmentX( JFrame.CENTER_ALIGNMENT );
-	play.setAlignmentX( JFrame.CENTER_ALIGNMENT );
-	
-	panel.add( instructions );
-	panel.add( highScores );
-       
-	JPanel ButtonPanel = new JPanel();
+//        createOldPanel(panel);
+	    frame.setDefaultCloseOperation( JFrame.EXIT_ON_CLOSE );
+	    frame.add( panel );
+        frame.setSize( 640, 480 );
+        frame.setLocationRelativeTo( null );
+        frame.setVisible( true );
+        frame.setResizable( false );
 
-	ButtonGroup difficulty = new ButtonGroup();
-	supereasy = new JRadioButton( "SUPEREASY" );
-	easy = new JRadioButton( "Easy" );
-	medium = new JRadioButton( "Medium" );
-	hard = new JRadioButton( "Hard" );
-	ExtremeType1 = new JRadioButton( "ExtremeType1" );
-	ExtremeType2 = new JRadioButton( "ExtremeType2" );
+        //Button Listener for Play Button
 
-	
-	difficulty.add(supereasy);
-	difficulty.add(easy);
-	difficulty.add(medium);
-	difficulty.add(hard);
-	difficulty.add(ExtremeType1);
-	difficulty.add(ExtremeType2);
-
-	
-
-
-	easy.setSelected(true);
-	ButtonPanel.add(supereasy);
-	ButtonPanel.add(easy);
-	ButtonPanel.add(medium);
-	ButtonPanel.add(hard);
-	ButtonPanel.add(ExtremeType1);
-	ButtonPanel.add(ExtremeType2);
-
-
-
-
-	panel.add(ButtonPanel);
-	panel.add( play );
-	frame.setSize( 640, 480 );
-	frame.setLocationRelativeTo( null );
-	frame.setVisible( true );
-	frame.setResizable( false );
-	
-	//Button Listener for Play Button
-	play.addActionListener( new PlayListener());
-	instructions.addActionListener( new InstructionsListener());
-	highScores.addActionListener( new HighScoresListener() );
 
     }
+
+
+    private JPanel createOldPanel(JPanel panel) {
+
+        JButton instructions = new JButton( "Instructions" );
+        JButton play = new JButton( "Play" );
+        JButton highScores = new JButton( "High Scores" );
+        play.addActionListener( new PlayListener());
+        instructions.addActionListener( new InstructionsListener());
+        highScores.addActionListener( new HighScoresListener() );
+
+        panel.setLayout( new BoxLayout( panel, BoxLayout.Y_AXIS ) );
+
+        instructions.setAlignmentX( JFrame.CENTER_ALIGNMENT );
+        highScores.setAlignmentX( JFrame.CENTER_ALIGNMENT );
+        play.setAlignmentX( JFrame.CENTER_ALIGNMENT );
+
+        panel.add( instructions );
+
+        ButtonGroup difficulty = new ButtonGroup();
+        JRadioButton easy;
+        JRadioButton medium;
+        JRadioButton hard;
+        JRadioButton ExtremeType1;
+        JRadioButton supereasy;
+        JRadioButton ExtremeType2;
+        JPanel buttonPanel = new JPanel();
+        supereasy = new JRadioButton( "SUPEREASY" );
+        easy = new JRadioButton( "Easy" );
+        medium = new JRadioButton( "Medium" );
+        hard = new JRadioButton( "Hard" );
+        ExtremeType1 = new JRadioButton( "ExtremeType1" );
+        ExtremeType2 = new JRadioButton( "ExtremeType2" );
+
+
+        difficulty.add(supereasy);
+        difficulty.add(easy);
+        difficulty.add(medium);
+        difficulty.add(hard);
+        difficulty.add(ExtremeType1);
+        difficulty.add(ExtremeType2);
+
+
+        easy.setSelected(true);
+        buttonPanel.add(supereasy);
+        buttonPanel.add(easy);
+        buttonPanel.add(medium);
+        buttonPanel.add(hard);
+        buttonPanel.add(ExtremeType1);
+        buttonPanel.add(ExtremeType2);
+
+
+    }
+
     /** getLevelDifficulty() sets level difficulty based on user input */
     public int getLevelDifficulty()
     {
@@ -155,8 +157,7 @@ public class MainMenu {
     }
     
     public static void main (String[] args) {
-
-	MainMenu m = new MainMenu();
+	    MainMenu m = new MainMenu();
     }
 
 }
